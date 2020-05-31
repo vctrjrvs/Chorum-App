@@ -1,0 +1,66 @@
+body {
+     box-sizing: border-box;
+     text-decoration: none;
+     margin: 10px;
+}
+
+.App_Header {
+text-align: center;
+background-color: black;
+color: white;
+}
+
+.Footer_List {
+     display: flex;
+     flex-direction: row;
+     list-style-type: none;
+     justify-content: flex-end;
+     background-color: black;
+     color: white;
+}
+
+.Footer_Item {
+     margin: 5px;
+}
+
+.Featured-Song-Container, .Featured-Artist-Container, .Featured-Album-Container  {
+     display: inline-flex;
+     flex-direction: column;
+     width: 100%;
+     text-align: center;
+     height: 40%;
+     color: white;
+}
+
+.Search-Form {
+     display: inline-block;
+     text-align: center;
+     width: 100%;
+     padding: 10px;
+     margin: auto;
+}
+
+.Search-Input {
+     width: 70%;
+     margin: 10px;
+}
+
+.Search-Submit {
+     width: 20%;
+     margin: 10px;
+}
+
+.Featured-Song-Container {
+     background-image: url('./Images/language.jpg');
+     background-position: center;
+}
+
+.Featured-Artist-Container {
+     background-image: url('./Images/svddendeath.jpg');
+     background-position: center;
+}
+
+.Featured-Album-Container {
+     background-image: url('./Images/towers.jpg');
+     background-position: center;
+}
