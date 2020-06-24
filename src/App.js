@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-// import ChorumContext from './ChorumContext';
+import ChorumContext from './ChorumContext';
 import Routes from './Routes'
 
 import './App.css';
@@ -29,11 +29,16 @@ export default class App extends Component {
     }
   }
 
+  static getDerivedStateFromError(error) {
+    console.error(error)
+    return { hasError: true }
+  }
+
   render() {
 
-    if (this.state.hasError) {
-      throw new Error('Error')
-    }
+    // if (this.state.hasError) {
+    //   throw new Error('Error')
+    // }
 
     return (
       <div className='App'>
@@ -48,6 +53,7 @@ export default class App extends Component {
         {/* footer containing legal stuff */}
 
         <main className='App_Main'>
+        {this.state.hasError && <p className='Red_Alert'>We're sorry, you've encountered an error!</p>}
           <Routes />
         </main>
         <footer className='App_Footer'>

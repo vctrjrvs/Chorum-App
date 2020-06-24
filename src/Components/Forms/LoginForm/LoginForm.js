@@ -1,6 +1,7 @@
 import React from 'react';
 import TokenService from '../../../services/token-service'
 import AuthApiService from '../../../services/auth-api-service'
+import { Button, Input } from '../../Utils/Utils'
 
 export default class LoginForm extends React.Component {
 
@@ -54,35 +55,31 @@ export default class LoginForm extends React.Component {
 
                          <legend>Log In</legend>
 
-                         <label
-                              htmlFor='Login_Form_User_Email'>
-                              Email
+                         <label htmlFor='Login_Form_Username'>
+                              Username
                          </label>
 
-                         <input
-                              type='email'
-                              placeholder='Email'
-                              name='User_Email'
-                              id='User_Email'
+                         <Input
+                              placeholder='Username'
+                              name='Username'
+                              id='Login_Form_Username'
                               required
                          />
 
-                         <label
-                              htmlFor='Login_Form_User_Password'>
+                         <label htmlFor='Login_Form_User_Password'>
                               Password
                          </label>
 
-                         <input
+                         <Input
                               type='password'
                               placeholder='Password'
                               name='User_Password'
                               id='User_Password'
                               required />
 
-                         <button
-                              type='submit'>
+                         <Button type='submit'>
                               Log In
-                         </button>
+                         </Button>
                     </fieldset>
                </form>
           )

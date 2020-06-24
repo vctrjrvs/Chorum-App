@@ -24,11 +24,11 @@ export default class Routes extends Component {
                          component={ RosterPage }
                     />
                     <Route
-                         path='/artist/:artistId'
+                         path='/artist/:artist_id'
                          render={(routeProps) => {
                               return (
                                    <ArtistProfile
-                                        artistId={routeProps.match.params.artistId}
+                                        artistId={routeProps.match.params.artist_id}
                                    />
                               )}}
                     />
@@ -40,18 +40,18 @@ export default class Routes extends Component {
                          path='/signup'
                          component={ SignUpPage }
                     />
-                    <Route
-                         path='/results/:searchInput'
+                    {/* <Route
+                         path='/results'
                          component={ ResultsPage }
-                    />
-                    <Route
+                    /> */}
+                    {/* <Route
                          path='/editprofile'
                          component={ EditProfilePage }
-                    />
-                    <Route
+                    /> */}
+                    {/* <Route
                          path='/dashboard'
                          component={ DashboardPage }
-                    />
+                    /> */}
                </Switch>
           )
      }
