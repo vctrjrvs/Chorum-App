@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default class Footer extends React.Component {
      render() {
@@ -6,21 +7,15 @@ export default class Footer extends React.Component {
                <footer className='App_Footer'>
                     <ul className='Footer_List'>
                          {/* Links to various legal/info-based pages */}
-                         <li className='Footer_Item'>
+                         <Link className='Footer_Item'>
                               Terms Of Use
-                         </li>
-                         <li className='Footer_Item'>
+                         </Link>
+                         <Link className='Footer_Item'>
                               Privacy
-                         </li>
-                         <li className='Footer_Item'>
+                         </Link>
+                         <Link className='Footer_Item'>
                               Copyright
-                         </li>
-                         <li className='Footer_Item'>
-                              Careers
-                         </li>
-                         <li className='Footer_Item'>
-                              Sitemap
-                         </li>
+                         </Link>
                     </ul>
                </footer>
           )

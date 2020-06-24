@@ -10,6 +10,31 @@ background-color: black;
 color: white;
 }
 
+.Home_Logo_Container {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+
+.Login_SignUp_Corner_Container {
+     width: auto;
+     max-height: 10%;
+     display: flex;
+     flex-direction: column;
+}
+
+.Corner_Avatar {
+     height: 50px;
+     width: 50px;
+     border-radius: 50%;
+}
+
+.Home_Logo {
+     width: 50%;
+     height: 50%;
+     border-radius: 50%;
+}
+
 .Footer_List {
      display: flex;
      flex-direction: row;
@@ -23,16 +48,12 @@ color: white;
      margin: 5px;
 }
 
-.Featured-Song-Container, .Featured-Artist-Container, .Featured-Album-Container  {
-     display: inline-flex;
+.Chorum_Search {
+     display: flex;
      flex-direction: column;
-     width: 100%;
-     text-align: center;
-     height: 40%;
-     color: white;
 }
 
-.Search-Form {
+.Search_Form {
      display: inline-block;
      text-align: center;
      width: 100%;
@@ -40,19 +61,32 @@ color: white;
      margin: auto;
 }
 
-.Search-Input {
+.Search_Input {
      width: 70%;
      margin: 10px;
 }
 
-.Search-Submit {
+label {
+     margin: 10px;
+}
+
+.Search_Submit {
      width: 20%;
      margin: 10px;
 }
 
-.Featured-Song-Container {
+/* .Featured-Song-Container {
      background-image: url('./Images/language.jpg');
      background-position: center;
+}
+
+.Featured-Song-Container, .Featured-Artist-Container, .Featured-Album-Container  {
+     display: inline-flex;
+     flex-direction: column;
+     width: 100%;
+     text-align: center;
+     height: 40%;
+     color: white;
 }
 
 .Featured-Artist-Container {
@@ -63,4 +97,4 @@ color: white;
 .Featured-Album-Container {
      background-image: url('./Images/towers.jpg');
      background-position: center;
-}
+} */

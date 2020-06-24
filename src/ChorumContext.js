@@ -1,15 +1,7 @@
 import React from 'react';
 
 const ChorumContext = React.createContext({
-    folders: [],
-    notes: [],
-    addingNote: null,
-    addingFolder: null,
-    toggleAddingFolder: () => {},
-    toggleAddingNote: () => {},
-    addFolder: () => {},
-    addNote: () => {},
-    deleteNote: () => {}
+     loggedIn: false
 })
 
 export default ChorumContext;
