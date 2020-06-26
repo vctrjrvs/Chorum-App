@@ -1,25 +1,25 @@
 import React from 'react';
 import ArtistApiService from '../services/artist-api-service';
-import ArtistListContext from '../Contexts/artist-list-context';
 import ArtistRosterItem from '../Components/ArtistRosterItem';
 import { Section } from '../Components/Utils/Utils';
+import ChorumContext from '../Contexts/ChorumContext';
 
 export default class Roster extends React.Component {
 
-     static contextType = ArtistListContext
+     static contextType = ChorumContext
 
      componentDidMount() {
-          this.context.clearError()
+          // this.context.clearError()
           ArtistApiService.getArtists()
-               .then(this.context.setArtistList)
-               .catch(this.context.setError)
+               .then(this.context.setArtists)
+               // .catch(this.context.setError)
      }
 
      renderArtists() {
-          const { artistList = [] } = this.context
-          return artistList.map(artist =>
+          const { artists = [] } = this.context
+          return artists.map(artist =>
                <ArtistRosterItem
-                    key={artist.artist_id}
+                    key={artist.name}
                     artist={artist}
                />
           )

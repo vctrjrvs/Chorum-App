@@ -1,9 +1,9 @@
-import TokenService from '../services/token-service'
+// import TokenService from '../services/token-service'
 import config from '../config'
 
 const ArtistApiService = {
   getArtists() {
-    return fetch(`${config.API_ENDPOINT}/artists`, {
+    return fetch(`${config.API_ENDPOINT}/api/artists`, {
       headers: {
       },
     })
@@ -13,10 +13,10 @@ const ArtistApiService = {
           : res.json()
       )
   },
-  getArtist(artistId) {
-    return fetch(`${config.API_ENDPOINT}/artists/${artistId}`, {
+  getArtist(id) {
+    return fetch(`${config.API_ENDPOINT}/api/artists/${id}`, {
       headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
+        // 'authorization': `bearer ${TokenService.getAuthToken()}`,
       },
     })
       .then(res =>

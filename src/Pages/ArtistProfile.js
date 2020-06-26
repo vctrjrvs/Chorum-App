@@ -1,45 +1,53 @@
 import React, { Component } from 'react'
-import ArtistContext from '../Contexts/artist-context'
 import ArtistApiService from '../services/artist-api-service'
 import { Section } from '../Components/Utils/Utils'
+import ChorumContext from '../Contexts/ChorumContext'
 
 export default class ArtistPage extends Component {
+  state = {
+    artist: null
+  }
+
   static defaultProps = {
     match: { params: {} },
   }
 
-  static contextType = ArtistContext
+  static contextType = ChorumContext
 
   componentDidMount() {
-    const { ArtistId } = this.props.match.params
-    this.context.clearError()
-    ArtistApiService.getArtist(ArtistId)
-      .then(this.context.setArtist)
+    const artist = this.props.artistId
+    console.log(this.props)
+    // this.context.clearError()
+    ArtistApiService.getArtist(artist)
+      .then(thisArtist => {
+        this.setState({
+          artist: thisArtist
+        })
+      })
       .catch(this.context.setError)
   }
 
-//   componentWillUnmount() {
-//     this.context.clearArtist()
-//   }
+  // componentWillUnmount() {
+  //   this.context.clearArtist()
+  // }
 
   renderArtist() {
-    const { artist } = this.context
-    return (
-         <>
-      <h2>{ artist.artist_name }</h2>
-      <ArtistContent artist={ artist } />
-      </>
-    )
+    const { artist } = this.state
+    return <>
+      <h2>{artist.name}</h2>
+      <h3>{artist.location}</h3>
+      <h3>{artist.genre}</h3>
+    </>
   }
 
   render() {
-    const { error, Artist } = this.context
+    const { error } = this.context
     let content
     if (error) {
       content = (error.error === `Artist doesn't exist`)
-        ? <p className='red'>Artist not found</p>
-        : <p className='red'>There was an error</p>
-    } else if (!Artist.id) {
+        ? <p className='Red_Alert'>Artist not found</p>
+        : <p className='Red_Alert'>There was an error</p>
+    } else if (!this.state.artist) {
       content = <div className='loading' />
     } else {
       content = this.renderArtist()
@@ -52,10 +60,10 @@ export default class ArtistPage extends Component {
   }
 }
 
-function ArtistContent({ artist }) {
-  return (
-    <p className='Artist_Profile_Content'>
-      {artist.content}
-    </p>
-  )
-}
+// function ArtistContent({ artist }) {
+//   return (
+//     <p className='Artist_Profile_Content'>
+//       {artist.content}
+//     </p>
+//   )
+// }

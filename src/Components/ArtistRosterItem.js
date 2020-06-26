@@ -7,9 +7,9 @@ export default class ArtistRosterItem extends Component {
     const { artist } = this.props
     return (
          <>
-      <Link to={`/artist/${artist.artist_id}`} className='ArtistRosterItem'>
+      <Link to={`/artist/${artist.id}`} className='ArtistRosterItem'>
           <h3 className='ArtistRosterItem__heading'>
-            {artist.artist_name}
+            {artist.name}
           </h3>
       </Link>        
           </>)
