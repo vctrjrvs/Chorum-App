@@ -1,11 +1,11 @@
 import React from 'react'
-import cardinalplaceholder from '../Images/cardinalplaceholder.png';
+import ChorumLogo from '../Images/ChorumLogo.png';
 
 export default class Logo extends React.Component {
      render() {
           return (
                <div className='Home_Logo_Container'>
-                    <img className='Home_Logo' src={cardinalplaceholder} alt='Chorum Placeholder Logo'></img>
+                    <img className='Home_Logo' src={ChorumLogo} alt='Chorum Logo'></img>
                </div>
           )
      }

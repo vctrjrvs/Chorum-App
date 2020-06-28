@@ -4,30 +4,51 @@ body {
      margin: 10px;
 }
 
+Link {
+     text-decoration: none;
+}
+
+.App_Header_Link {
+margin: 0px auto;
+color: black;
+text-decoration: none;
+}
+
 .App_Header {
-text-align: center;
-background-color: black;
-color: white;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+
+.Header_Item {
+     text-decoration: none;
+}
+
+.Header_Non_Logged_In, .Header_Logged_In{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
 }
 
 .Home_Logo_Container {
      display: flex;
      flex-direction: column;
      align-items: center;
+     text-decoration: none;
 }
 
-.Login_SignUp_Corner_Container {
+/* .Login_SignUp_Corner_Container {
      width: auto;
      max-height: 10%;
      display: flex;
      flex-direction: column;
-}
+} */
 
-.Corner_Avatar {
+/* .Corner_Avatar {
      height: 50px;
      width: 50px;
      border-radius: 50%;
-}
+} */
 
 .Home_Logo {
      width: 50%;
@@ -39,18 +60,21 @@ color: white;
      display: flex;
      flex-direction: row;
      list-style-type: none;
-     justify-content: flex-end;
-     background-color: black;
-     color: white;
+     justify-content: center;
+     color: black;
+     padding: 0;
+     margin: 5px;
 }
 
 .Footer_Item {
      margin: 5px;
+     text-decoration: none;
 }
 
 .Chorum_Search {
      display: flex;
      flex-direction: column;
+     align-items: center;
 }
 
 .Search_Form {
@@ -75,26 +99,8 @@ label {
      margin: 10px;
 }
 
-/* .Featured-Song-Container {
-     background-image: url('./Images/language.jpg');
-     background-position: center;
-}
-
-.Featured-Song-Container, .Featured-Artist-Container, .Featured-Album-Container  {
-     display: inline-flex;
+/* .Login_Form {
+     display: flex;
      flex-direction: column;
-     width: 100%;
-     text-align: center;
-     height: 40%;
-     color: white;
-}
-
-.Featured-Artist-Container {
-     background-image: url('./Images/svddendeath.jpg');
-     background-position: center;
-}
-
-.Featured-Album-Container {
-     background-image: url('./Images/towers.jpg');
-     background-position: center;
+     align-items: center;
 } */
