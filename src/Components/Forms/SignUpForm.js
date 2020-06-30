@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, Input, Required } from '../../Utils/Utils';
-import AuthApiService from '../../../services/auth-api-service'
+import { Button, Input, Required } from '../Utils/Utils';
+import AuthApiService from '../../services/auth-api-service'
 
 export default class SignUpForm extends React.Component {
      static defaultProps = {
@@ -11,10 +11,10 @@ export default class SignUpForm extends React.Component {
 
      handleSubmit = ev => {
           ev.preventDefault()
-          const { username, user_email, password, location, genre, artist_name } = ev.target
+          const { username, user_email, password, location, genre, artist_name, about } = ev.target
 
           console.log('Signup form submitted')
-          console.log(username.value, user_email.value, password.value, location.value, genre.value, artist_name.value)
+          console.log(username.value, user_email.value, password.value, location.value, genre.value, artist_name.value, about.value)
 
           this.setState({ error: null })
           AuthApiService.postUser({
@@ -23,7 +23,8 @@ export default class SignUpForm extends React.Component {
                user_email: user_email.value,
                location: location.value, 
                genre: genre.value, 
-               artist_name: artist_name.value
+               artist_name: artist_name.value,
+               about: about.value
           })
                .then(user => {
                     username.value = ''
@@ -32,6 +33,7 @@ export default class SignUpForm extends React.Component {
                     location.value = ''
                     genre.value = ''
                     artist_name.value = ''
+                    about.value = ''
                     this.props.onSignUpSuccess()
                })
                .catch(res => {
@@ -50,8 +52,6 @@ export default class SignUpForm extends React.Component {
                          <Input type='email' placeholder='email' name='user_email' id='user_email' required />
                          <label htmlFor='user_password'> Password <Required /> </label>
                          <Input type='password' placeholder='Password' name='password' id='user_password' required />
-                         {/* <label htmlFor='User_Confirm_Password'> Confirm Password <Required /> </label>
-                         <Input type='password' placeholder='Confirm Password' name='User_Confirm_Password' id='User_Confirm_Password' required /> */}
                          <label htmlFor='username'> Username <Required /> </label>
                          <Input type='username' placeholder='Username' name='username' id='username' required />
                          {/* <label htmlFor='user_Type'> Please select your user type: <Required /> </label>
@@ -65,6 +65,8 @@ export default class SignUpForm extends React.Component {
                          <Input type='genre' placeholder='Genre' name='genre' id='genre' required />
                          <label htmlFor='User_Location'> Location <Required /> </label>
                          <Input type='location' placeholder='Location' name='location' id='location' required />
+                         <label htmlFor='User_About'> About <Required /> </label>
+                         <Input type='about' placeholder='About' name='about' id='about' required />
                          <Button type='submit'> Submit </Button>
                     </fieldset>
                </form>

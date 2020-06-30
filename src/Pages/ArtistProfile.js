@@ -34,9 +34,10 @@ export default class ArtistPage extends Component {
   renderArtist() {
     const { artist } = this.state
     return <>
-      <h2>{artist.name}</h2>
-      <h3>{artist.location}</h3>
-      <h3>{artist.genre}</h3>
+      <h2 className='Artist_Name'>{ artist.name }</h2>
+      <h3 className='Artist_Location'>Location: { artist.location }</h3>
+      <h3 className='Artist_Genre'>Genre(s): { artist.genre }</h3>
+      <h3 className='Artist_About'>About: { artist.about }</h3>
     </>
   }
 

@@ -2,6 +2,7 @@ body {
      box-sizing: border-box;
      text-decoration: none;
      margin: 10px;
+     font-family: 'Roboto', sans-serif;
 }
 
 Link {
@@ -12,23 +13,44 @@ Link {
 margin: 0px auto;
 color: black;
 text-decoration: none;
+font-size: 2rem;
+font-family: 'Rock Salt', cursive;
 }
 
 .App_Header {
      display: flex;
      flex-direction: column;
      align-items: center;
+     background-color: rgb(187, 0, 0);
+     max-height: 300px;
+     width: 100%;
 }
 
 .Header_Item {
      text-decoration: none;
 }
 
+.Header_Item:visited {
+     color: black;
+}
+
+.Header_Sub_Item {
+     text-decoration: none;
+     margin: 10px;
+}
+
+.Header_Sub_Item:visited {
+     color: black;
+}
+
 .Header_Non_Logged_In, .Header_Logged_In{
      display: flex;
-     flex-direction: column;
+     flex-direction: row;
      align-items: center;
+     justify-content: space-between;
 }
+
+
 
 .Home_Logo_Container {
      display: flex;
@@ -56,6 +78,10 @@ text-decoration: none;
      border-radius: 50%;
 }
 
+.App_Footer {
+     background-color: rgb(187, 0, 0);
+}
+
 .Footer_List {
      display: flex;
      flex-direction: row;
@@ -69,6 +95,14 @@ text-decoration: none;
 .Footer_Item {
      margin: 5px;
      text-decoration: none;
+}
+
+.Footer_Item:hover {
+     color: rgb(255, 255, 255);
+}
+
+.Footer_Item:visited {
+     color: black;
 }
 
 .Chorum_Search {
@@ -97,6 +131,33 @@ label {
 .Search_Submit {
      width: 20%;
      margin: 10px;
+}
+
+.Artist_Roster_Filter {
+     display: flex;
+     flex-direction: column;
+}
+
+.Artist_Roster_Filter > label {
+     text-align: center;
+}
+
+.Artist_Roster_Item {
+     text-decoration: none;
+}
+
+.Artist_Roster_Item:visited {
+     color: black;
+}
+
+.Artist_Roster_Name_Heading {
+     margin: 10px 0 0;
+     font-weight: 500;
+}
+
+.Artist_Roster_Location_Heading {
+     margin: 0px;
+     font-weight: 300;
 }
 
 /* .Login_Form {

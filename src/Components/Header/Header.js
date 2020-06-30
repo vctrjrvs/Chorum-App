@@ -15,8 +15,8 @@ export default class Header extends React.Component {
      renderLoggedInLinks() {
           return (
                <div className='Header_Logged_In'>
-                    <Link to='/edit' className='Header_Item'> Edit Profile </Link>
-                    <Link onClick={this.handleLogoutClick} to='/' className='Header_Item'> Logout </Link>
+                    <Link to='/edit' className='Header_Sub_Item'> Edit Profile </Link>
+                    <Link onClick={this.handleLogoutClick} to='/' className='Header_Sub_Item'> Logout </Link>
                </div>
           )
      }
@@ -24,9 +24,9 @@ export default class Header extends React.Component {
      renderLoggedOutLinks() {
           return (
                <div className='Header_Non_Logged_In'>
-                    <Link to='/signup' className='Header_Item'> Sign Up </Link>
+                    <Link to='/signup' className='Header_Sub_Item'> Sign Up </Link>
                     {/* <Hyph /> */}
-                    <Link to='/login' className='Header_Item'> Log In </Link>
+                    <Link to='/login' className='Header_Sub_Item'> Log In </Link>
                </div>
           )
      }

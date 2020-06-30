@@ -4,7 +4,10 @@ const ChorumContext = React.createContext({
      loggedIn: false,
      setLoginStatus: () => {},
      artists: [],
-     setArtists: () => {}
+     setArtists: () => {},
+     searchTerm: '',
+     // clearError: () => {},
+     // setError: () => {}
 })
 
 export default ChorumContext;

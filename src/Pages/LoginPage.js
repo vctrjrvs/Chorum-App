@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginForm from '../Components/Forms/LoginForm/LoginForm'
+import LoginForm from '../Components/Forms/LoginForm'
 import { Section } from '../Components/Utils/Utils';
 import ChorumContext from '../Contexts/ChorumContext';
 

@@ -28,6 +28,7 @@ const TokenService = {
     return (payload.exp * 1000) - Date.now()
   },
   queueCallbackBeforeExpiry(callback) {
+    /* get the number of ms from now until the token expires */
     const msUntilExpiry = TokenService._getMsUntilExpiry(
       TokenService.readJwtToken()
     )

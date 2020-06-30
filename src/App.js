@@ -10,13 +10,6 @@ import Footer from './Components/Footer/Footer';
 
 import './App.css';
 
-//What does the app do? Provides a hub for independent musicians to share
-//and promote music, brand, etc, 
-
-//Custom URL and Favicon
-//URL: chorum.me
-//Favicon? Small Logo 
-
 export default class App extends React.Component {
   constructor(props) {
     super(props)
@@ -38,7 +31,7 @@ export default class App extends React.Component {
     /* if a user is logged in */
     if (TokenService.hasAuthToken()) {
       /* tell the idle service to register event listeners. the event listeners are fired when a user does something, e.g. move their mouse
-        if the user doesn't trigger one of these event listeners, the idleCallback (logout) will be invoked */
+      if the user doesn't trigger one of these event listeners, the idleCallback (logout) will be invoked */
       IdleService.regiserIdleTimerResets()
       /* Tell the token service to read the JWT, looking at the exp value and queue a timeout just before the token expires */
       TokenService.queueCallbackBeforeExpiry(() => {

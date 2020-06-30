@@ -1,5 +1,6 @@
 import config from '../config'
 import TokenService from './token-service'
+import IdleService from './idle-service'
 
 const AuthApiService = {
   postUser(user) {
@@ -30,13 +31,8 @@ const AuthApiService = {
           : res.json()
       )
       .then(res => {
-        /*
-          whenever a login is performed:
-          1. save the token in local storage
-          2. queue auto logout when the user goes idle
-          3. queue a call to the refresh endpoint based on the JWT's exp value
-        */
         TokenService.saveAuthToken(res.authToken)
+        IdleService.regiserIdleTimerResets()
         console.log(res.authToken)
         TokenService.queueCallbackBeforeExpiry(() => {
           AuthApiService.postRefreshToken()
@@ -61,7 +57,7 @@ const AuthApiService = {
       )
   },
   postRefreshToken() {
-    return fetch(`${config.API_ENDPOINT}/auth/refresh`, {
+    return fetch(`${config.API_ENDPOINT}/api/auth/refresh`, {
       method: 'POST',
       headers: {
         'authorization': `Bearer ${TokenService.getAuthToken()}`,
@@ -74,13 +70,13 @@ const AuthApiService = {
       )
       .then(res => {
         TokenService.saveAuthToken(res.authToken)
-        // TokenService.queueCallbackBeforeExpiry(() => {
-        //   AuthApiService.postRefreshToken()
-        // })
+        TokenService.queueCallbackBeforeExpiry(() => {
+          AuthApiService.postRefreshToken()
+        })
         return res
       })
       .catch(err => {
-        console.log('Refresh token request error')
+        console.log('refresh token request error')
         console.error(err)
       })
   },

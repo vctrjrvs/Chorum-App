@@ -7,10 +7,13 @@ export default class ArtistRosterItem extends Component {
     const { artist } = this.props
     return (
          <>
-      <Link to={`/artist/${artist.id}`} className='ArtistRosterItem'>
-          <h3 className='ArtistRosterItem__heading'>
+      <Link to={`/artist/${artist.id}`} className='Artist_Roster_Item'>
+          <h3 className='Artist_Roster_Name_Heading'>
             {artist.name}
           </h3>
+          <h4 className='Artist_Roster_Location_Heading'>
+            {artist.location}
+          </h4>
       </Link>        
           </>)
           }
