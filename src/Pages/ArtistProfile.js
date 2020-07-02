@@ -33,12 +33,15 @@ export default class ArtistPage extends Component {
 
   renderArtist() {
     const { artist } = this.state
-    return <>
-      <h2 className='Artist_Name'>{ artist.name }</h2>
-      <h3 className='Artist_Location'>Location: { artist.location }</h3>
-      <h3 className='Artist_Genre'>Genre(s): { artist.genre }</h3>
-      <h3 className='Artist_About'>About: { artist.about }</h3>
-    </>
+    return <div className='Artist_Profile_Container'>
+      <h2 className='Artist_Name'>{artist.name}</h2>
+      <h3 className='Artist_Headline'>Headline: {artist.headline}</h3>
+      <h3 className='Artist_Location'>Location: {artist.location}</h3>
+      <h3 className='Artist_Genre'>Genre(s): {artist.genre}</h3>
+      <h3 className='Artist_Associated'>Associated Acts: {artist.associated_acts}</h3>
+      <h4 className='Artist_About'>About</h4>
+      <p className='Artist_About'>{artist.about}</p>
+    </div>
   }
 
   render() {
@@ -60,11 +63,3 @@ export default class ArtistPage extends Component {
     )
   }
 }
-
-// function ArtistContent({ artist }) {
-//   return (
-//     <p className='Artist_Profile_Content'>
-//       {artist.content}
-//     </p>
-//   )
-// }

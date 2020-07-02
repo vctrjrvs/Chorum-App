@@ -39,7 +39,7 @@ export default class LoginForm extends React.Component {
                <form className='Login_Form' onSubmit={this.handleSubmitJWTAuth}>
                     <div role='alert'> {error && <p className='Red_Alert'> {error.message} </p>} </div>
 
-                    <fieldset>
+                    <fieldset className='Login_Form'>
 
                          <legend>Log In</legend>
 

@@ -1,5 +1,4 @@
 import React from 'react'
-// import ChorumContext from '../../../ChorumContext'
 
 export default class Search extends React.Component {
      render() {

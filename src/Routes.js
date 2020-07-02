@@ -9,6 +9,9 @@ import RosterPage from './Pages/RosterPage';
 // import ResultsPage from './Pages/ResultsPage'
 import EditProfilePage from './Pages/EditProfilePage';
 import ArtistProfile from './Pages/ArtistProfile';
+import TermsOfUsePage from './Pages/TermsOfUsePage';
+import CopyrightPage from './Pages/CopyrightPage';
+import PrivacyPage from './Pages/PrivacyPage';
 
 export default class Routes extends Component {
 
@@ -25,8 +28,10 @@ export default class Routes extends Component {
                     />
                     <Route path='/login' component={LoginPage} />
                     <Route path='/signup' component={SignUpPage} />
-                    {/* <Route path='/results' component={ ResultsPage } /> */}
                     <Route path='/edit' component={EditProfilePage} />
+                    <Route path='/terms' component={TermsOfUsePage} />
+                    <Route path='/copyright' component={CopyrightPage} />
+                    <Route path='/privacy' component={PrivacyPage} />
                     {/* <Route path='/dashboard' component={ DashboardPage } /> */}
                </Switch>
           )

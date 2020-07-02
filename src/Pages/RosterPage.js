@@ -23,28 +23,12 @@ export default class Roster extends React.Component {
           // .catch(this.context.setError)
      }
 
-     // renderArtists() {
-     //      const { artists = [] } = this.context
-     //      if (this.state.searchTerm !== '') {
-     //           artists = artists.filter(artist => artist.name.includes(this.state.searchTerm))
-     //      } else
-     //           return artists.map(artist => <ArtistRosterItem key={artist.name} artist={artist} />)
-     // }
-
      editSearchTerm = (e) => {
           console.log(e.target.value)
           this.setState({
                searchTerm: e.target.value
           })
      }
-
-     // handleFilterChange = () => {
-     //      const { artists = [] } = this.context
-     //      return artists
-     //      .filter(artist => artist
-     //           .toLowerCase()
-     //           .includes(this.state.searchTerm.toLowerCase()))  
-     // }
 
      render() {
           const { error } = this.context;
