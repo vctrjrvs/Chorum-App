@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Input, Required, Textarea } from '../Utils/Utils';
-import AuthApiService from '../../services/auth-api-service';
+import AuthApiService from '../../Services/auth-api-service';
 
 export default class SignUpForm extends React.Component {
      static defaultProps = {
@@ -12,9 +12,6 @@ export default class SignUpForm extends React.Component {
      handleSubmit = ev => {
           ev.preventDefault()
           const { username, user_email, password, location, genre, artist_name, about, associated_acts, headline } = ev.target
-
-          console.log('Signup form submitted')
-          console.log(username.value, user_email.value, password.value, location.value, genre.value, artist_name.value, about.value, associated_acts.value, headline.value)
 
           this.setState({ error: null })
           AuthApiService.postUser({

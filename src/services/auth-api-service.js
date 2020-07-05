@@ -33,7 +33,6 @@ const AuthApiService = {
       .then(res => {
         TokenService.saveAuthToken(res.authToken)
         IdleService.regiserIdleTimerResets()
-        console.log(res.authToken)
         TokenService.queueCallbackBeforeExpiry(() => {
           AuthApiService.postRefreshToken()
         })
@@ -71,7 +70,6 @@ const AuthApiService = {
         return res
       })
       .catch(err => {
-        console.log('refresh token request error')
         console.error(err)
       })
   },

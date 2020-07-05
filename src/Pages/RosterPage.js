@@ -1,11 +1,8 @@
 import React from 'react';
-import ArtistApiService from '../services/artist-api-service';
+import ArtistApiService from '../Services/artist-api-service';
 import ArtistRosterItem from '../Components/ArtistRosterItem';
 import { Section, Input } from '../Components/Utils/Utils';
 import ChorumContext from '../Contexts/ChorumContext';
-// import Search from '../Components/Forms/SearchForm/SearchForm';
-// import ArtistRosterFilter from '../Components/Forms/ArtistRosterFilter';
-// import { Link } from 'react-router-dom';
 
 export default class Roster extends React.Component {
 
@@ -20,11 +17,10 @@ export default class Roster extends React.Component {
           // this.context.clearError()
           ArtistApiService.getArtists()
                .then(this.context.setArtists)
-          // .catch(this.context.setError)
+          .catch(this.context.setError)
      }
 
      editSearchTerm = (e) => {
-          console.log(e.target.value)
           this.setState({
                searchTerm: e.target.value
           })
@@ -55,7 +51,6 @@ export default class Roster extends React.Component {
 
                     <Section list className='Artist_Roster_Page'>
                          { error ? <p className='Red_Alert'>There was an error, please try again</p> : artists.map(artist => <ArtistRosterItem key={artist.name} artist={artist}/>) }
-                         {/* {error ? <p className='Red_Alert'>There was an error, please try again</p> : this.renderArtists()} */}
                     </Section>
 
                </>

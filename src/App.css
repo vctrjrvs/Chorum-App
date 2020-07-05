@@ -220,11 +220,13 @@ legend {
 .Artist_Roster_Name_Heading {
      font-weight: 500;
      margin: 0 0;
+     color: black;
 }
 
 .Artist_Roster_Location_Heading {
      margin: 0px;
      font-weight: 300;
+     color: black;
 }
 
 .Artist_Profile_Container {

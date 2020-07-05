@@ -2,9 +2,9 @@ import React from 'react';
 import ChorumContext from './Contexts/ChorumContext';
 import Routes from './Routes'
 
-import TokenService from './services/token-service';
-import AuthApiService from './services/auth-api-service';
-import IdleService from './services/idle-service';
+import TokenService from './Services/token-service';
+import AuthApiService from './Services/auth-api-service';
+import IdleService from './Services/idle-service';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 
@@ -25,7 +25,7 @@ export default class App extends React.Component {
     return { hasError: true }
   }
   componentDidMount() {
-    /* set the function (callback) to call when a user goes idle. we'll set this to logout a user when they're idle */
+    /* set the callback to call when a user goes idle and logout */
     IdleService.setIdleCallback(this.logoutFromIdle)
 
     /* if a user is logged in */
@@ -60,7 +60,6 @@ export default class App extends React.Component {
   }
 
   setArtists = artists => {
-    console.log(artists)
     this.setState({ artists })
   }
 

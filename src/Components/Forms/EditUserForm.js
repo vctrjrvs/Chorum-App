@@ -1,9 +1,11 @@
 import React from 'react';
 import { Button, Input, Required, Textarea } from '../Utils/Utils';
-import AuthApiService from '../../services/auth-api-service'
+import AuthApiService from '../../Services/auth-api-service'
+import TokenService from '../../Services/token-service';
+
 import config from '../../config';
 import ChorumContext from '../../Contexts/ChorumContext';
-import TokenService from '../../services/token-service';
+
 
 export default class EditForm extends React.Component {
      static defaultProps = {
@@ -58,9 +60,6 @@ export default class EditForm extends React.Component {
           ev.preventDefault()
           const { location, genre, artist_name, about, associated_acts, headline } = ev.target
 
-          console.log('Edit form submitted')
-          console.log(location.value, genre.value, artist_name.value, about.value)
-
           this.setState({ error: null })
           AuthApiService.updateUser({
                location: location.value,
@@ -77,12 +76,10 @@ export default class EditForm extends React.Component {
                     about.value = ''
                     associated_acts.value = ''
                     headline.value = ''
-                    console.log('line80')
                     this.props.onEditSuccess()
                })
                .then()
                .catch(res => {
-                    console.log(res)
                     this.setState({ error: res.error })
                })
      }
@@ -90,7 +87,6 @@ export default class EditForm extends React.Component {
      render() {
 
           const { error, id, artist_name, genre, location, about, associated_acts, headline } = this.state
-          console.log(artist_name, genre, location)
           const user = { id, artist_name, genre, location, about, associated_acts, headline }
           return (
                <form className='Chorum_Edit_Form' onSubmit={this.handleSubmit} user={user}>

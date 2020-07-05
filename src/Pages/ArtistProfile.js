@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ArtistApiService from '../services/artist-api-service'
+import ArtistApiService from '../Services/artist-api-service'
 import { Section } from '../Components/Utils/Utils'
 import ChorumContext from '../Contexts/ChorumContext'
 
@@ -16,7 +16,6 @@ export default class ArtistPage extends Component {
 
   componentDidMount() {
     const artist = this.props.artistId
-    console.log(this.props)
     // this.context.clearError()
     ArtistApiService.getArtist(artist)
       .then(thisArtist => {
@@ -26,10 +25,6 @@ export default class ArtistPage extends Component {
       })
       .catch(this.context.setError)
   }
-
-  // componentWillUnmount() {
-  //   this.context.clearArtist()
-  // }
 
   renderArtist() {
     const { artist } = this.state

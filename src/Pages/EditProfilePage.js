@@ -3,7 +3,7 @@ import EditUserForm from '../Components/Forms/EditUserForm'
 import { Section } from '../Components/Utils/Utils';
 import ChorumContext from '../Contexts/ChorumContext';
 import { Redirect } from 'react-router-dom';
-import TokenService from '../services/token-service';
+import TokenService from '../Services/token-service';
 
 export default class EditProfilePage extends React.Component {
 
@@ -17,7 +17,6 @@ export default class EditProfilePage extends React.Component {
 
      handleEditSuccess = user => {
           const userId = (TokenService.readJwtToken().user_id)
-          console.log(userId)
           const { history } = this.props
           history.push(`/artist/${userId}`)
      }
@@ -27,7 +26,6 @@ export default class EditProfilePage extends React.Component {
      };
 
      render() {
-          console.log(this.props)
           if (!this.context.loggedIn)
                return <Redirect to='/' />
           return (

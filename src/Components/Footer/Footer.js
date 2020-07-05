@@ -6,7 +6,7 @@ export default class Footer extends React.Component {
           return (
                <footer className='App_Footer'>
                     <ul className='Footer_List'>
-                         {/* Links to various legal/info-based pages */}
+                         {/* Links to various legal/info-based pages, will expand upon in the future.*/}
                          <Link to='/roster' className='Footer_Item'>Roster</Link>
                          <Link to='/terms' className='Footer_Item'>Terms</Link>
                          <Link to='/privacy' className='Footer_Item'>Privacy</Link>
