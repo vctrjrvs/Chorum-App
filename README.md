@@ -7,6 +7,7 @@ Programmed by **Victor Jarvis** for Thinkful's Software Engineering Immersion Pr
 This program was created using HTML, CSS, Javascript, Node.js, and PostgreSQL.
 
 Live Project Link: <https://chorum-app.vctrjrvs.vercel.app/>
+Corresponding Server-Side Repo Link: <https://github.com/vctrjrvs/chorum-api>
 
 ## Screenshots
 
