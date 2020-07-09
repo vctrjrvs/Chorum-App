@@ -16,8 +16,8 @@ Live Project Link: <https://chorum-app.vctrjrvs.vercel.app/>
 
 ## Demo Info
 
-Credentials
-Username: DemoUser
+Credentials<br/>
+Username: DemoUser<br/>
 Password: Password123!
 
 ---
