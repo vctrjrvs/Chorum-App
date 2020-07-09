@@ -1,8 +1,24 @@
 # Chorum
 
+![GitHub package.json version](https://img.shields.io/github/package-json/v/vctrjrvs/Chorum-App?style=for-the-badge)
+
 Programmed by **Victor Jarvis** for Thinkful's Software Engineering Immersion Program.
 
 This program was created using HTML, CSS, Javascript, Node.js, and PostgreSQL.
+
+Live Project Link: <https://chorum-app.vctrjrvs.vercel.app/>
+
+## Screenshots
+
+![Screenshot 1](./src/Images/ChorumSS.png)
+![Screenshot 2](./src/Images/ChorumSS2.png)
+![Screenshot 3](./src/Images/ChorumSS3.png)
+
+## Demo Info
+
+Credentials
+Username: DemoUser
+Password: Password123!
 
 ---
 
