@@ -5,15 +5,15 @@ import AuthApiService from '../../Services/auth-api-service';
 export default class SignUpForm extends React.Component {
      static defaultProps = {
           onSignUpSuccess: () => { }
-     }
+     };
 
-     state = { error: null }
+     state = { error: null };
 
      handleSubmit = ev => {
-          ev.preventDefault()
-          const { username, user_email, password, location, genre, artist_name, about, associated_acts, headline } = ev.target
+          ev.preventDefault();
+          const { username, user_email, password, location, genre, artist_name, about, associated_acts, headline } = ev.target;
 
-          this.setState({ error: null })
+          this.setState({ error: null });
           AuthApiService.postUser({
                username: username.value,
                password: password.value,
@@ -39,11 +39,11 @@ export default class SignUpForm extends React.Component {
                })
                .catch(res => {
                     this.setState({ error: res.error })
-               })
-     }
+               });
+     };
 
      render() {
-          const { error } = this.state
+          const { error } = this.state;
           return (
                <form className='Chorum_SignUp_Form' onSubmit={this.handleSubmit}>
 
@@ -91,6 +91,6 @@ export default class SignUpForm extends React.Component {
                     </fieldset>
 
                </form>
-          )
-     }
-}
+          );
+     };
+};

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default class Search extends React.Component {
      render() {
@@ -8,6 +8,6 @@ export default class Search extends React.Component {
                     <input className='Search_Input' type='text' placeholder='Search'></input>
                     <button type='submit' className='Search_Submit' value='Submit'>Submit</button>
                </form>
-          )
-     }
-}
+          );
+     };
+};

@@ -1,6 +1,6 @@
-import React from 'react'
-import Logo from '../Components/Logo'
-import { Section } from '../Components/Utils/Utils'
+import React from 'react';
+import Logo from '../Components/Logo';
+import { Section } from '../Components/Utils/Utils';
 
 export default class HomePage extends React.Component {
      render() {
@@ -16,6 +16,6 @@ export default class HomePage extends React.Component {
                          </p>
                     </Section>
                </div>
-          )
-     }
-}
+          );
+     };
+};

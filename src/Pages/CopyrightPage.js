@@ -1,6 +1,6 @@
-import React from 'react'
-import SecondaryLogo from '../Components/SecondaryLogo'
-import { Section } from '../Components/Utils/Utils'
+import React from 'react';
+import SecondaryLogo from '../Components/SecondaryLogo';
+import { Section } from '../Components/Utils/Utils';
 
 export default class CopyrightPage extends React.Component {
      render() {
@@ -27,6 +27,6 @@ export default class CopyrightPage extends React.Component {
                          </p>
                     </Section>
                </div>
-          )
-     }
-}
+          );
+     };
+};

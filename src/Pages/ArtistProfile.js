@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
-import ArtistApiService from '../Services/artist-api-service'
-import { Section } from '../Components/Utils/Utils'
-import ChorumContext from '../Contexts/ChorumContext'
+import React, { Component } from 'react';
+import ArtistApiService from '../Services/artist-api-service';
+import { Section } from '../Components/Utils/Utils';
+import ChorumContext from '../Contexts/ChorumContext';
 
 export default class ArtistPage extends Component {
   state = {
     artist: null
-  }
+  };
 
   static defaultProps = {
     match: { params: {} },
-  }
+  };
 
-  static contextType = ChorumContext
+  static contextType = ChorumContext;
 
   componentDidMount() {
     const artist = this.props.artistId
@@ -21,15 +21,15 @@ export default class ArtistPage extends Component {
       .then(thisArtist => {
         this.setState({
           artist: thisArtist
-        })
+        });
       })
-      .catch(this.context.setError)
-  }
+      .catch(this.context.setError);
+  };
 
   renderArtist() {
     const { artist } = this.state
     return <div className='Artist_Profile_Container'>
-      <h2 className='Artist_Name'>{artist.name}</h2>
+      <h2 className='Artist_Name'>{artist.artist_name}</h2>
       <h3 className='Artist_Headline'>Headline: {artist.headline}</h3>
       <h3 className='Artist_Location'>Location: {artist.location}</h3>
       <h3 className='Artist_Genre'>Genre(s): {artist.genre}</h3>
@@ -37,7 +37,7 @@ export default class ArtistPage extends Component {
       <h4 className='Artist_About'>About</h4>
       <p className='Artist_About'>{artist.about}</p>
     </div>
-  }
+  };
 
   render() {
     const { error } = this.context
@@ -55,6 +55,6 @@ export default class ArtistPage extends Component {
       <Section className='ArtistPage'>
         {content}
       </Section>
-    )
-  }
-}
+    );
+  };
+};

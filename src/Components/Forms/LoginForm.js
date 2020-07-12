@@ -1,20 +1,20 @@
 import React from 'react';
-import TokenService from '../../Services/token-service'
-import AuthApiService from '../../Services/auth-api-service'
-import { Button, Input } from '../Utils/Utils'
+import TokenService from '../../Services/token-service';
+import AuthApiService from '../../Services/auth-api-service';
+import { Button, Input } from '../Utils/Utils';
 
 export default class LoginForm extends React.Component {
 
      static defaultProps = {
           onLoginSuccess: () => { }
-     }
+     };
 
-     state = { error: null }
+     state = { error: null };
 
      handleSubmitJWTAuth = ev => {
-          ev.preventDefault()
-          this.setState({ error: null })
-          const { username, password } = ev.target
+          ev.preventDefault();
+          this.setState({ error: null });
+          const { username, password } = ev.target;
 
           AuthApiService.postLogin({
                username: username.value,
@@ -28,11 +28,11 @@ export default class LoginForm extends React.Component {
                })
                .catch(res => {
                     this.setState({ error: res.error })
-               })
-     }
+               });
+     };
 
      render() {
-          const { error } = this.state
+          const { error } = this.state;
           return (
                <form className='Login_Form' onSubmit={this.handleSubmitJWTAuth}>
                     <div role='alert'> {error && <p className='Red_Alert'> {error.message} </p>} </div>
@@ -52,6 +52,6 @@ export default class LoginForm extends React.Component {
                          <Button type='submit'> Log In </Button>
                     </fieldset>
                </form>
-          )
-     }
-}
+          );
+     };
+};

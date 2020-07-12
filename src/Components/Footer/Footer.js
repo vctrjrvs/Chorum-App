@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Footer extends React.Component {
      render() {
@@ -13,6 +13,6 @@ export default class Footer extends React.Component {
                          <Link to='/copyright' className='Footer_Item'>Copyright</Link>
                     </ul>
                </footer>
-          )
-     }
-}
+          );
+     };
+};

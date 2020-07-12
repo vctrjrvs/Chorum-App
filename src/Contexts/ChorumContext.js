@@ -2,12 +2,10 @@ import React from 'react';
 
 const ChorumContext = React.createContext({
      loggedIn: false,
-     setLoginStatus: () => {},
+     setLoginStatus: () => { },
      artists: [],
-     setArtists: () => {},
+     setArtists: () => { },
      searchTerm: '',
-     // clearError: () => {},
-     // setError: () => {}
-})
+});
 
 export default ChorumContext;

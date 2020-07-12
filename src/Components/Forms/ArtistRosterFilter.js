@@ -6,12 +6,11 @@ export default class ArtistRosterFilter extends React.Component {
 
      state = {
           searchTerm: ''
-     }
+     };
 
-     static contextType = ChorumContext
+     static contextType = ChorumContext;
 
      render() {
-
           return (
                <form className='Artist_Roster_Filter'>
                     <label htmlFor='Artist_Roster_Filter'>Filter By Artist</label>
@@ -24,6 +23,6 @@ export default class ArtistRosterFilter extends React.Component {
                          onChange={e => this.setState({ searchTerm: e.target.value })}
                     />
                </form>
-          )
-     }
-}
+          );
+     };
+};

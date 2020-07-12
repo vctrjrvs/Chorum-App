@@ -1,6 +1,6 @@
-import config from '../config'
-import TokenService from './token-service'
-import IdleService from './idle-service'
+import config from '../config';
+import TokenService from './token-service';
+import IdleService from './idle-service';
 
 const AuthApiService = {
   postUser(user) {
@@ -15,7 +15,7 @@ const AuthApiService = {
         (!res.ok)
           ? res.json().then(e => Promise.reject(e))
           : res.json()
-      )
+      );
   },
   postLogin({ username, password }) {
     return fetch(`${config.API_ENDPOINT}/api/auth/login`, {
@@ -37,7 +37,7 @@ const AuthApiService = {
           AuthApiService.postRefreshToken()
         })
         return res
-      })
+      });
   },
   updateUser(user) {
     const userId = (TokenService.readJwtToken().user_id)
@@ -48,7 +48,7 @@ const AuthApiService = {
         'authorization': `Bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify(user),
-    })
+    });
   },
   postRefreshToken() {
     return fetch(`${config.API_ENDPOINT}/api/auth/refresh`, {
@@ -71,8 +71,8 @@ const AuthApiService = {
       })
       .catch(err => {
         console.error(err)
-      })
+      });
   },
-}
+};
 
-export default AuthApiService
+export default AuthApiService;

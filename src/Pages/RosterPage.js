@@ -32,7 +32,7 @@ export default class Roster extends React.Component {
           let { artists = [] } = this.context
 
           if (this.state.searchTerm !== '') {
-               artists = artists.filter(artist => artist.name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
+               artists = artists.filter(artist => artist.artist_name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
           } 
 
           return (

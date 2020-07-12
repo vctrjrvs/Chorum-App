@@ -1,7 +1,8 @@
 // import TokenService from '../services/token-service'
-import config from '../config'
+import config from '../config';
 
 const ArtistApiService = {
+
   getArtists() {
     return fetch(`${config.API_ENDPOINT}/api/artists`, {
       headers: {
@@ -25,6 +26,6 @@ const ArtistApiService = {
           : res.json()
       )
   }
-}
+};
 
-export default ArtistApiService
+export default ArtistApiService;

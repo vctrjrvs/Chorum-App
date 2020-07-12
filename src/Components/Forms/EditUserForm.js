@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Input, Required, Textarea } from '../Utils/Utils';
-import AuthApiService from '../../Services/auth-api-service'
+import AuthApiService from '../../Services/auth-api-service';
 import TokenService from '../../Services/token-service';
 
 import config from '../../config';
@@ -11,7 +11,7 @@ export default class EditForm extends React.Component {
      static defaultProps = {
           onEditSuccess: () => { },
           handleClickCancel: () => { }
-     }
+     };
 
      static contextType = ChorumContext;
 
@@ -53,8 +53,8 @@ export default class EditForm extends React.Component {
                .catch(error => {
                     console.error(error)
                     this.setState({ error })
-               })
-     }
+               });
+     };
 
      handleSubmit = ev => {
           ev.preventDefault()
@@ -81,13 +81,12 @@ export default class EditForm extends React.Component {
                .then()
                .catch(res => {
                     this.setState({ error: res.error })
-               })
-     }
+               });
+     };
 
      render() {
-
-          const { error, id, artist_name, genre, location, about, associated_acts, headline } = this.state
-          const user = { id, artist_name, genre, location, about, associated_acts, headline }
+          const { error, id, artist_name, genre, location, about, associated_acts, headline } = this.state;
+          const user = { id, artist_name, genre, location, about, associated_acts, headline };
           return (
                <form className='Chorum_Edit_Form' onSubmit={this.handleSubmit} user={user}>
                     <div role='alert'> {error && <p className='Red_Alert'> {error.message} </p>} </div>
@@ -119,6 +118,6 @@ export default class EditForm extends React.Component {
 
                     </fieldset>
                </form>
-          )
-     }
-}
+          );
+     };
+};

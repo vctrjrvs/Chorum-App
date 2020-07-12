@@ -5,8 +5,6 @@ import HomePage from './Pages/HomePage';
 import LoginPage from './Pages/LoginPage';
 import SignUpPage from './Pages/SignUpPage';
 import RosterPage from './Pages/RosterPage';
-// import DashboardPage from './Pages/DashboardPage';
-// import ResultsPage from './Pages/ResultsPage'
 import EditProfilePage from './Pages/EditProfilePage';
 import ArtistProfile from './Pages/ArtistProfile';
 import TermsOfUsePage from './Pages/TermsOfUsePage';
@@ -34,6 +32,6 @@ export default class Routes extends Component {
                     <Route path='/privacy' component={PrivacyPage} />
                     {/* <Route path='/dashboard' component={ DashboardPage } /> */}
                </Switch>
-          )
-     }
-}
+          );
+     };
+};
