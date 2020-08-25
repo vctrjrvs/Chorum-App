@@ -6,6 +6,7 @@ const ChorumContext = React.createContext({
      artists: [],
      setArtists: () => { },
      searchTerm: '',
+     clearError: () => { }
 });
 
 export default ChorumContext;

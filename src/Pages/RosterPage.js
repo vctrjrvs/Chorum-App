@@ -3,6 +3,7 @@ import ArtistApiService from '../Services/artist-api-service';
 import ArtistRosterItem from '../Components/ArtistRosterItem';
 import { Section, Input } from '../Components/Utils/Utils';
 import ChorumContext from '../Contexts/ChorumContext';
+import Sidebar from '../Components/Sidebar/Sidebar';
 
 export default class Roster extends React.Component {
 
@@ -17,7 +18,7 @@ export default class Roster extends React.Component {
           // this.context.clearError()
           ArtistApiService.getArtists()
                .then(this.context.setArtists)
-          .catch(this.context.setError)
+               .catch(this.context.setError)
      }
 
      editSearchTerm = (e) => {
@@ -33,10 +34,11 @@ export default class Roster extends React.Component {
 
           if (this.state.searchTerm !== '') {
                artists = artists.filter(artist => artist.artist_name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
-          } 
+          }
 
           return (
                <>
+                    <Sidebar />
                     <form className='Artist_Roster_Filter'>
                          <label htmlFor='Artist_Roster_Filter'>Filter By Artist</label>
                          <Input
@@ -49,10 +51,9 @@ export default class Roster extends React.Component {
                          />
                     </form>
 
-                    <Section list className='Artist_Roster_Page'>
-                         { error ? <p className='Red_Alert'>There was an error, please try again</p> : artists.map(artist => <ArtistRosterItem key={artist.name} artist={artist}/>) }
+                    <Section list className='Browse_List_Page'>
+                         {error ? <p className='Red_Alert'>There was an error, please try again</p> : artists.map(artist => <ArtistRosterItem key={artist.id} artist={artist} />)}
                     </Section>
-
                </>
           )
      }

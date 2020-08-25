@@ -1,11 +1,13 @@
 import React from 'react';
 import Logo from '../Components/Logo';
 import { Section } from '../Components/Utils/Utils';
+import Sidebar from '../Components/Sidebar/Sidebar';
 
 export default class HomePage extends React.Component {
      render() {
           return (
                <div className='Home_Container'>
+                    <Sidebar />
                     <Logo />
                     <Section className='About_The_App'>
                          <h3 className='ATA_Header'>
