@@ -11,9 +11,8 @@ Corresponding Server-Side Repo Link: <https://github.com/vctrjrvs/chorum-api>
 
 ## Screenshots
 
-![Screenshot 1](./src/Images/ChorumSS.png)
+![Screenshot 1](./src/Images/ChorumSS1.png)
 ![Screenshot 2](./src/Images/ChorumSS2.png)
-![Screenshot 3](./src/Images/ChorumSS3.png)
 
 ## Demo Info
 

@@ -10,6 +10,8 @@ import ArtistProfile from './Pages/ArtistProfile';
 import TermsOfUsePage from './Pages/TermsOfUsePage';
 import CopyrightPage from './Pages/CopyrightPage';
 import PrivacyPage from './Pages/PrivacyPage';
+import AboutPage from './Pages/AboutPage';
+import MeetTheTeam from './Pages/MeetTheTeam';
 
 export default class Routes extends Component {
 
@@ -30,6 +32,8 @@ export default class Routes extends Component {
                     <Route path='/terms' component={TermsOfUsePage} />
                     <Route path='/copyright' component={CopyrightPage} />
                     <Route path='/privacy' component={PrivacyPage} />
+                    <Route path='/about' component={AboutPage} />
+                    <Route path='/team' component={MeetTheTeam} />
                     {/* <Route path='/dashboard' component={ DashboardPage } /> */}
                </Switch>
           );
